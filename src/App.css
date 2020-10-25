@@ -1,0 +1,49 @@
+.App-logo {
+  animation: spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.result-header {
+  font: 15px;
+  color: #0866ff;
+  display: flex;
+  justify-content: center;
+}
+
+.result-list {
+  display: flex;
+  justify-content: center;
+  color: #011833;
+}
+
+.question-no {
+  color: #2ab8d1;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.answer-no {
+  font-size: 18px;
+  font-weight: 400;
+  color: #222;
+}
