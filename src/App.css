@@ -47,3 +47,21 @@
   font-weight: 400;
   color: #222;
 }
+
+.skip-btn-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.skip-btn {
+  border: 1px solid #2ab8d1;
+  padding: 12px 22px;
+  color: #2ab8d1;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 50px;
+  cursor: pointer;
+  border-radius: 4px;
+}

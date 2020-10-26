@@ -18,6 +18,7 @@ class App extends Component {
       answersCount: {},
       result: "",
       answerList: [],
+      isSkip: false,
     };
   }
 
@@ -30,6 +31,24 @@ class App extends Component {
       answerOptions: shuffledAnswerOptions[0],
     });
   }
+
+  skipQuestion = () => {
+    let count = 1;
+    this.setState(() => {
+      if (count === 1) {
+        this.state.answerList.push({
+          id: this.state.questionId,
+          answer: "Not Answered",
+        });
+        count = 2;
+      }
+    });
+    if (this.state.questionId < quizQuestions.length) {
+      setTimeout(() => this.setNextQuestion(), 300);
+    } else {
+      setTimeout(() => this.setResults(this.getResults()), 300);
+    }
+  };
 
   shuffleArray(array) {
     var currentIndex = array.length,
@@ -122,6 +141,7 @@ class App extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
+        skip={this.skipQuestion}
       />
     );
   }

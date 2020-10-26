@@ -19,13 +19,20 @@ function Quiz(props) {
   }
 
   return (
-    <div key={props.questionId}>
-      <QuestionCount counter={props.questionId} total={props.questionTotal} />
-      <Question content={props.question} />
-      <ul className="answerOptions">
-        {props.answerOptions.map(renderAnswerOptions)}
-      </ul>
-    </div>
+    <>
+      <div key={props.questionId}>
+        <QuestionCount counter={props.questionId} total={props.questionTotal} />
+        <Question content={props.question} />
+        <ul className="answerOptions">
+          {props.answerOptions.map(renderAnswerOptions)}
+        </ul>
+      </div>
+      <div className="skip-btn-row">
+        <button onClick={props.skip} className="skip-btn">
+          Skip
+        </button>
+      </div>
+    </>
   );
 }
 
